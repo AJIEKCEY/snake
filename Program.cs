@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace snake
 {
@@ -6,11 +7,17 @@ namespace snake
     {
         static void Main(string[] args)
         {
-            Point p1 = new Point(1,2,'*');
-            p1.Drow();
+            List<Point> points = new List<Point>();
             
-            Point p2 = new Point(4,5,'#');
-            p2.Drow();
+            points.Add(new Point(1,2,'*'));
+            points.Add(new Point(4,5,'#'));
+            points.Add(new Point(5,5,'#'));
+            points.Add(new Point(6,5,'#'));
+
+            foreach (var point in points)
+            {
+                point.Drow();
+            }
         }
     }
 }
