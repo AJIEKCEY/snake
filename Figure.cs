@@ -13,5 +13,25 @@ namespace snake
                 point.Draw();
             }
         }
+        
+        internal bool IsHit( Figure figure )
+        {
+            foreach(var p in Points)
+            {
+                if ( figure.IsHit( p ) )
+                    return true;
+            }
+            return false;
+        }
+
+        private bool IsHit( Point point )
+        {
+            foreach(var p in Points)
+            {
+                if ( p.IsHit( point ) )
+                    return true;
+            }
+            return false;
+        }
     }
 }
